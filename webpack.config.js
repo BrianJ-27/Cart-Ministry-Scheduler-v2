@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -15,9 +16,18 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(js)$/,
+                use: 'babel-loader'
+            },
+            {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
         ],
     },
+    plugins: [new HtmlWebpackPlugin({
+        inject: false,
+        template: 'src/index.html',
+        minify: true,
+    })],
 }
