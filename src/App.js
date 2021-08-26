@@ -1,8 +1,11 @@
 import React from 'react';
+import TestStuff from './components/Test';
 
 const App = () => {
     return (
-        <div className="app">Hello World</div>
+        <>
+        <TestStuff/>
+        </>
     )
 }
 
