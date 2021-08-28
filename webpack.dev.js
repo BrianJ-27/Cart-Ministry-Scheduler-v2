@@ -12,7 +12,7 @@ module.exports = {
   mode: 'development',
   entry: resolveAppPath('src'),
   output: {
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
     publicPath: "/",
   },
@@ -30,7 +30,7 @@ module.exports = {
         use: "babel-loader",
       },
       {
-        test: /\.css$/i,
+		test: /\.s[ac]ss$/i,
         use: [
 			{
 				loader: "style-loader",

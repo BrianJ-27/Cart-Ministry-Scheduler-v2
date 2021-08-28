@@ -5,9 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const appDirectory = fs.realpathSync(process.cwd());
 // Gets absolute path of file within app directory
 const resolveAppPath = relativePath => path.resolve(appDirectory, relativePath);
-// Host
-const host = process.env.HOST || 'localhost';
-// Required for babel-preset-react-app
 
 module.exports = {
   mode: 'development',
@@ -24,8 +21,12 @@ module.exports = {
         use: "babel-loader",
       },
       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        test: /\.s[ac]ss$/i,
+        use: [
+			{ loader: "style-loader",},
+			{ loader: "css-loader", },
+			{ loader: "sass-loader", },
+		],
       },
     ],
   },

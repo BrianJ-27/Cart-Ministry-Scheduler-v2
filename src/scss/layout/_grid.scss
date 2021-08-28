@@ -1,0 +1,56 @@
+// **************************************
+// LAYOUT STYLES
+// **************************************
+@use '../utilities' as *;
+/*------FLEXBOX LAYOUT STYLES-----------*/
+
+//flex styles
+.flex__container{
+  @include flex_me($dir:column, $wrap:wrap);
+}
+
+/*------GRID LAYOUT STYLES-----------*/
+//Base Grid Layout for Whole site
+.grid__wrapper{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "header"
+    "navigation"
+    "main";
+    @include mq('md'){
+        display: grid;
+        grid-template-columns: 125px repeat(2, minmax(200px, auto));
+        grid-template-areas:
+        "navigation header header"
+        "navigation main main"
+        "navigation main main"
+        "navigation main main"
+        "navigation main main"
+        "navigation main main";
+  }
+}
+
+//Main Content Grid Layout
+.main__grid--wrapper{
+    @include mq('md'){
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+}
+
+// Grid Area Items
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: navigation;
+}
+
+main {
+    grid-area: main;
+
+}

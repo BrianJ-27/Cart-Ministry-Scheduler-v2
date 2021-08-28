@@ -1,0 +1,35 @@
+// **************************************
+// IMAGE STYLES
+// **************************************
+@use '../utilities' as *;
+.img__header--container{
+
+}
+
+.img__banner--container{
+
+}
+
+.img__bio{
+
+}
+
+//Avatar image styling for reviews
+.img__person{
+    @include roundy($dim:125px, $border: 1px solid $color-border-dark);
+}
+
+// main nav SVG icons to the left of the links
+.nav__icon{
+	fill: $color-secondary;
+	width: 20px;
+	height: 20px;
+	margin-right: .5em;
+}
+
+// Styling for SVG social media icons
+.footer__icons{
+    width: 100px;
+    height: 100px;
+    padding: 1em;
+}
