@@ -1,0 +1,55 @@
+// **************************************
+// NAVIGATION STYLES
+// **************************************
+@use '../utilities' as *;
+
+/*-----Main nav styles-----*/
+
+// Navigation bar will slide in from the left when user clicks
+.nav__sidebar--container{
+
+  }
+
+// Navigation Header Where logo and close btn are located
+  .nav__header--container{
+
+  }
+
+.nav__title{
+
+}
+.close__btn{
+
+}
+
+//main nav <ul> styles
+.nav__wrapper{
+}
+
+//main nav <li> styles
+.nav__item{
+    @include flex_me($vertAlign:center);
+    &:hover{
+        padding-left: 30px;
+    }
+}
+
+// <a> link styles
+.nav__link{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-link-default;
+    transition: color .5s;
+    &:active,:focus{
+
+        color: $color-link-active ;
+        }
+    &:hover{
+        color: $white;
+
+        text-decoration: none;
+        }
+    &:visited{
+        color: $color-link-visited;
+    }
+}

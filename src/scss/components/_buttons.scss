@@ -1,0 +1,22 @@
+// **************************************
+// BUTTON STYLES
+// **************************************
+@use '../utilities' as *;
+//button styles for project card overlay
+.btn__overlay--full{
+    @extend %btn-properties;
+    &:hover{
+
+    }
+    @include mq ('md'){
+    }
+}
+
+.btn__overlay--outline{
+    @extend %btn-properties;
+    &:hover{
+
+    }
+    @include mq ('md'){
+    }
+}
