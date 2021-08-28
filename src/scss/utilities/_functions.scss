@@ -1,0 +1,33 @@
+// **************************************
+//FUNCTIONS
+// **************************************
+
+/*
+Important reminders: 
+1) only use functions for simple calculations we can use 
+   instead of doing the math in our own head
+*/
+
+
+//convert pixels to em value
+@function px-to-ems($target, $context: $base-font-size){
+    @return ($target/$context) * 1em;
+  }
+
+//convert pixels to percentage value
+@function px-to-pc($target, $context: $max-width){
+    @return ($target/$context) * 100%;
+  }
+
+ // this function help us calculate a easy flexbox layout using the flex shorthand property
+ //$gutter represents one side, then converts it to a % value and
+ // ex) flex: 1 per-line(2); 
+ // ex) flex-basis: per-line(3); 
+@function per-line($items){
+    $gutter-pct: px-to-pc($gutter) * 2;
+    $gutter-sum: $items * $gutter-pct; 
+    @return (100%/$items) - $gutter-sum;
+  }
+
+
+  

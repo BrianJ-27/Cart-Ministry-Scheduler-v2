@@ -1,0 +1,110 @@
+// **************************************
+// GLOBAL VARIABLES
+// **************************************
+/*-----Descriptive Color Variables-----*/
+$white: #fff;
+$black: #000;
+$serene-midnight: #0D0D0D;
+$relaxed-silver: #B8BCBF; 
+$grey: #878787;
+$tire-wheel: #2F2F2F;
+$silver-surfer: #DBDBDB;
+$deep-koamaru: #111E6C;
+$calm-blue: #024873; 
+$sophisticated-teal: #025E73; 
+$sunflower: #FFBF00;
+$bright-sky: #9DE5FF;
+$the-hulk: #3B7A57;
+$algae-green: #93DFB8;
+$amethyst-smoke: #A397B4;
+$barney: #714693;
+$bone: #D4C4A8;
+$almond: #EED9C4;
+$grey-poupon: #AF8F2C;
+$apple-blossom: #AF4D43;
+$apricot: #EB9373;
+$burnt-orange: #DA6304;
+$bean: #3D0C02;
+$bubblegum: #EEC1BE;
+
+/*-----Project Color Variables-----*/
+$calm-blue: #1261A6; 
+$sophisticated-teal: #025E73; 
+$mellow-skyblue: #29A7D9;
+$serene-midnight: #041E40; 
+$relaxed-silver: #B8BCBF; 
+$white: #fff;
+
+/*-----Functional Color Variables-----*/
+$color-main: $calm-blue;
+$color-main-transparent: rgba($color-main, .5);
+$color-main-light: lighten($color-main, 3%);
+$color-main-lightest: lighten($color-main, 50%);
+$color-main-dark: darken($color-main, 15%);
+$color-main-darkest: darken($color-main, 25%);
+$color-secondary: $relaxed-silver;
+$color-accent: $mellow-skyblue;
+$color-accent-light: lighten($color-accent, 35%);
+
+//background colors
+$color-bg: $serene-midnight;
+$color-bg-dark: darken($color-bg, 20%);
+$color-bg-darkest: darken($color-bg, 40%);
+$color-bg-light: lighten($silver-surfer, 10%);
+$color-shadow: rgba($black, .5);
+$color-bg-footer: $serene-midnight;
+$color-bg-header: $serene-midnight;
+
+//Link colors
+$color-link-default: $white;
+$color-link-active: $silver-surfer;
+$color-link-hover: $sophisticated-teal;
+$color-link-visited: $silver-surfer;
+
+//Border Colors
+$color-border-light: $color-accent;
+$color-border-dark: $color-main;
+
+//Headings & Paragraph Colors
+$color-text-light: $white; 
+$color-text-base: $grey;
+$color-text-dark: $tire-wheel;
+
+//Button Colors
+$color-link-button-default: $color-main;
+/*
+I won't be using these variables for this project
+// $button-success: #09E827;
+// $button-error: #D13219;
+// $button-warning: #FF760D;
+// $button-info: #693D80;
+*/
+//layout
+$max-width: 1200px;
+$gutter: 15px;
+$header-height: 600px;
+$footer-height: 100px;
+
+//Font Stacks 
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;1,400&family=Raleway&display=swap');
+$font-stack-bangers: 'Lato', sans-serif;
+$font-stack-montserrat: 'Raleway', sans-serif;
+$base-font-size: 16px;
+
+//border radius
+$soft-curve: 5px;
+$moderate-curve: 15px;
+$hard-curve: 25px;
+$full-circle: 50%;
+
+//Breakpoint Sizes
+$mobile-view: 320px;
+$tablet-view: 768px;
+$desktop-view: 1024px;
+
+// Media Query Breakpoint Map
+$breakpoints: (
+'sm': $mobile-view,    
+'md': $tablet-view,
+'lg': $desktop-view,
+);
