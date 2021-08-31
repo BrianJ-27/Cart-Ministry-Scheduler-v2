@@ -1,8 +1,8 @@
 import React from 'react';
-
+import DashboardTest from './components/Dashboard';
 const App = () => {
     return (
-        <div className="title__primary">Hello World</div>
+        <DashboardTest/>
     )
 }
 

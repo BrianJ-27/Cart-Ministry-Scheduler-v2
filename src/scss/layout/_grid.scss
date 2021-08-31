@@ -37,7 +37,7 @@
 .main__grid--wrapper{
     @include mq('md'){
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: fr;
     }
 }
 
