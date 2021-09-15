@@ -1,5 +1,5 @@
 {
-  "name": "Cart-Ministry-Scheduler",
+  "name": "cart-ministry-scheduler",
   "version": "1.0.0",
   "description": "Congregational Cart Scheduler",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "prestart:api": "node tools/createMockDb.js",
     "start:api": "node tools/apiServer.js",
     "test": "jest --config jest.config.js --watch",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.config.prod.js"
   },
   "keywords": [],
   "author": "Brian Johnson Nestor Padilla Joshua Vasquez",
@@ -24,10 +24,11 @@
     "@testing-library/react": "^12.0.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
+    "css-minimizer-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^5.3.2",
     "jest": "^27.1.0",
     "json-server": "0.16.3",
-    "mini-css-extract-plugin": "^2.2.0",
+    "mini-css-extract-plugin": "^2.3.0",
     "npm-run-all": "4.1.5",
     "react-test-renderer": "^17.0.2",
     "sass": "^1.38.2",
