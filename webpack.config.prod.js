@@ -1,6 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 // App directory
 const appDirectory = fs.realpathSync(process.cwd());
 // Gets absolute path of file within app directory
@@ -14,7 +16,7 @@ module.exports = {
   entry: resolveAppPath('src'),
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: 'bundle.[contenthash].js',
     publicPath: '/'
   },
   module: {
@@ -24,16 +26,33 @@ module.exports = {
         use: 'babel-loader'
       },
       {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader']
+        test: /\.s[ac]ss$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: 'index.[contenthash].html',
       inject: false,
       template: path.resolve(__dirname, 'src', 'index.html'),
       minify: true
-    })
+    }),
+    new MiniCssExtractPlugin({
+      linkType: "text/css",
+      filename: "style.[contenthash].css",
+      chunkFilename: "[id].css",
+    }),
+    new CssMinimizerPlugin({
+      parallel: true,
+      minimizerOptions: {
+        preset: [
+          "default",
+          {
+            discardComments: { removeAll: true },
+          },
+        ],
+      },
+    }),
   ]
 };
