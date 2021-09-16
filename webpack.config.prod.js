@@ -8,16 +8,17 @@ const appDirectory = fs.realpathSync(process.cwd());
 // Gets absolute path of file within app directory
 const resolveAppPath = relativePath => path.resolve(appDirectory, relativePath);
 // Host
-const host = process.env.HOST || 'localhost';
-// Required for babel-preset-react-app
+// const host = process.env.HOST || 'localhost';
+// // Required for babel-preset-react-app
 
 module.exports = {
-  mode: 'development',
-  entry: resolveAppPath('src'),
+  mode: 'production',
+  entry: resolveAppPath('src', 'index.html'),
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.[contenthash].js',
-    publicPath: '/'
+    publicPath: '/',
+    clean: true
   },
   module: {
     rules: [
