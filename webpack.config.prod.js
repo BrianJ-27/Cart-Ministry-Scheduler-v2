@@ -10,9 +10,12 @@ const resolveAppPath = relativePath => path.resolve(appDirectory, relativePath);
 // Host
 // const host = process.env.HOST || 'localhost';
 // // Required for babel-preset-react-app
+process.env.NODE_ENV = "production";
 
 module.exports = {
   mode: 'production',
+  target: "web",
+  devtool: 'source-map',
   entry: resolveAppPath('src', 'index.html'),
   output: {
     path: path.resolve(__dirname, 'build'),
