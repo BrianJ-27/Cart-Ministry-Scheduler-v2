@@ -1,13 +1,19 @@
 import React from 'react';
+import ProfileBlock from '../profile/index';
 
 const DashNav = () => {
+  //hardcoded user profile
+  const userProfile = {
+    firstName: 'Brian',
+    lastName: 'Johnson',
+    role: 'Administrator',
+    profilePicture: 'https://avatars.githubusercontent.com/u/45458265?v=4',
+  };
+
   return (
     <nav>
       <div className="nav__header--container">
-        <div>
-          <img src="/" className="img__person" alt="user photo" />
-        </div>
-        <h3 className="nav__title">Brian Padilla</h3>
+        <ProfileBlock userProfile={userProfile} />
       </div>
       <div>
         <ul className="nav__wrapper">
