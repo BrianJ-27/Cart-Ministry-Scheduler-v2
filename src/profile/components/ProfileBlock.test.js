@@ -1,8 +1,8 @@
-import React from 'react';
-import { render, cleanup } from '@testing-library/react';
-import ProfileBlock from './ProfileBlock';
 import { ThemeProvider } from '@material-ui/styles';
+import { cleanup, render } from '@testing-library/react';
+import React from 'react';
 import theme from '../../scss/theme';
+import ProfileBlock from './ProfileBlock';
 
 const renderProfileBlock = (userProfile) => {
   return render(
@@ -22,7 +22,10 @@ test('Ensure component renders without crashing', () => {
     role: 'Co-Ruler',
   };
 
-  //This is a very simple component that is only there to arrange
-  //it's children. Just make sure it renders without crashing
-  renderProfileBlock(userProfile);
+  const expectedName = `${userProfile.firstName} ${userProfile.lastName}`;
+
+  const { getByTestId } = renderProfileBlock(userProfile);
+
+  expect(getByTestId('name')).toHaveTextContent(expectedName);
+  expect(getByTestId('role')).toHaveTextContent(userProfile.role);
 });
