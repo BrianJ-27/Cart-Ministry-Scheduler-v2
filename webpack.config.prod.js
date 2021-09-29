@@ -1,62 +1,78 @@
+const webpack = require('webpack');
 const path = require('path');
-const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-// App directory
-const appDirectory = fs.realpathSync(process.cwd());
-// Gets absolute path of file within app directory
-const resolveAppPath = relativePath => path.resolve(appDirectory, relativePath);
-// Host
-// const host = process.env.HOST || 'localhost';
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpackBundleAnalyzer = require('webpack-bundle-analyzer');
+
 // // Required for babel-preset-react-app
-process.env.NODE_ENV = "production";
+process.env.NODE_ENV = 'production';
 
 module.exports = {
   mode: 'production',
-  target: "web",
+  target: 'web',
   devtool: 'source-map',
-  entry: resolveAppPath('src', 'index.html'),
+  entry: './src/index',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.[contenthash].js',
     publicPath: '/',
-    clean: true
+    clean: true,
   },
   module: {
     rules: [
       {
-        test: /\.(js)$/,
-        use: 'babel-loader'
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
-      }
-    ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.[contenthash].html',
-      inject: false,
-      template: path.resolve(__dirname, 'src', 'index.html'),
-      minify: true
-    }),
-    new MiniCssExtractPlugin({
-      linkType: "text/css",
-      filename: "style.[contenthash].css",
-      chunkFilename: "[id].css",
-    }),
-    new CssMinimizerPlugin({
-      parallel: true,
-      minimizerOptions: {
-        preset: [
-          "default",
+        use: [
+          MiniCssExtractPlugin.loader,
           {
-            discardComments: { removeAll: true },
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
           },
         ],
       },
+    ],
+  },
+  plugins: [
+    // Display bundle stats
+    new webpackBundleAnalyzer.BundleAnalyzerPlugin({ analyzerMode: 'static' }),
+
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
     }),
-  ]
+
+    new webpack.DefinePlugin({
+      // This global makes sure React is built in prod mode.
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      favicon: 'src/favicon.ico',
+      minify: {
+        // see https://github.com/kangax/html-minifier#options-quick-reference
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+      },
+    }),
+  ],
 };
