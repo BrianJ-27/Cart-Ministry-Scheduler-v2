@@ -1,5 +1,5 @@
-import React from 'react';
 import { makeStyles } from '@material-ui/styles';
+import React from 'react';
 
 export default function ProfilePicture({ profilePicture }) {
   const classes = useStyles();
@@ -13,7 +13,6 @@ export default function ProfilePicture({ profilePicture }) {
 
 const useStyles = makeStyles(
   (theme) => ({
-    ...theme,
     pictureContainer: {
       flex: '1',
     },
