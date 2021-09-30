@@ -2,34 +2,55 @@
 // IMAGE STYLES
 // **************************************
 @use '../utilities' as *;
-.img__header--container{
-
+.img__header--container {
 }
 
-.img__banner--container{
-
+.img__banner--container {
 }
 
-.img__bio{
-
+.img__bio {
 }
 
 //Avatar image styling for reviews
-.img__person{
-    @include roundy($dim:125px, $border: 1px solid $color-border-dark);
+.img__person {
+	@include roundy($dim: 125px, $border: 1px solid $color-border-dark);
 }
 
 // main nav SVG icons to the left of the links
-.nav__icon{
+.nav__icon {
 	fill: $color-secondary;
 	width: 20px;
 	height: 20px;
-	margin-right: .5em;
+	margin-right: 0.5em;
+}
+
+.icon__header--container {
+	@include flex_me($just: center);
+}
+
+.form__icons--header {
+	width: auto;
+	height: 6em;
+	margin: 0 auto;
+	fill: $white;
+	transition: fill 0.3s ease-out;
+	@include mq('md') {
+		height: 8em;
+	}
+	&:hover {
+		fill: $color-accent;
+		transition: fill 0.3s ease-in;
+	}
+}
+
+.form__icons {
+	color: $white;
+	margin-right: 1em;
 }
 
 // Styling for SVG social media icons
-.footer__icons{
-    width: 100px;
-    height: 100px;
-    padding: 1em;
+.footer__icons {
+	width: 100px;
+	height: 100px;
+	padding: 1em;
 }

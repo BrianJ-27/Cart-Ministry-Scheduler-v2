@@ -3,42 +3,48 @@
 // **************************************
 
 @use '../utilities/variables' as u;
-*{
-    box-sizing: border-box;
-    // background: #000 !important;
-    // color: #0f0 !important;
-    // outline: solid #f00 1px !important;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	// background: #000 !important;
+	// color: #0f0 !important;
+	// outline: solid #f00 1px !important;
+}
+html,
+body,
+#root {
+	height: 100%;
 }
 
-body{
-    font-family: u.$font-stack-montserrat;
+body {
+	font-family: u.$font-stack-open-sans;
 	line-height: 1;
 	font-size: 1rem;
 }
 
-p{
-    color: u.$color-text-dark;
+p {
+	color: u.$color-text-dark;
 }
 
-a{
-    display: inline-block;
-    padding: .6em;
+a {
+	display: inline-block;
+	padding: 0.6em;
+	text-decoration: underline #fff;
 }
 
-header{
-    background-color: cadetblue;
+header {
+	background-color: u.$color-secondary;
 }
 
 nav {
-    background-color: coral;
+	background-color: coral;
 }
 
-
-
-footer{
-    height: u.$footer-height;
-    background: u.$color-bg-darkest;
-    color: u.$color-text-light;
+footer {
+	height: u.$footer-height;
+	background: u.$color-bg-darkest;
+	color: u.$color-text-light;
 }
 
 /*-----HEADINGS------*/
@@ -46,6 +52,6 @@ h1,
 h2,
 h3,
 h4,
-h6{
-    font-family: u.$font-stack-bangers;
+h6 {
+	font-family: u.$font-stack-work-sans;
 }

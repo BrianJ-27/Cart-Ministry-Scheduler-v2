@@ -4,91 +4,88 @@
 /*-----Descriptive Color Variables-----*/
 $white: #fff;
 $black: #000;
-$serene-midnight: #0D0D0D;
-$relaxed-silver: #B8BCBF; 
+$serene-midnight: #0d0d0d;
+$relaxed-silver: #b8bcbf;
 $grey: #878787;
-$tire-wheel: #2F2F2F;
-$silver-surfer: #DBDBDB;
-$deep-koamaru: #111E6C;
-$calm-blue: #024873; 
-$sophisticated-teal: #025E73; 
-$sunflower: #FFBF00;
-$bright-sky: #9DE5FF;
-$the-hulk: #3B7A57;
-$algae-green: #93DFB8;
-$amethyst-smoke: #A397B4;
+$tire-wheel: #2f2f2f;
+$silver-surfer: #dbdbdb;
+$deep-koamaru: #111e6c;
+$calm-blue: #024873;
+$sophisticated-teal: #025e73;
+$sunflower: #ffbf00;
+$bright-sky: #9de5ff;
+$the-hulk: #3b7a57;
+$algae-green: #93dfb8;
+$amethyst-smoke: #a397b4;
 $barney: #714693;
-$bone: #D4C4A8;
-$almond: #EED9C4;
-$grey-poupon: #AF8F2C;
-$apple-blossom: #AF4D43;
-$apricot: #EB9373;
-$burnt-orange: #DA6304;
-$bean: #3D0C02;
-$bubblegum: #EEC1BE;
+$bone: #d4c4a8;
+$almond: #eed9c4;
+$grey-poupon: #af8f2c;
+$apple-blossom: #af4d43;
+$apricot: #eb9373;
+$burnt-orange: #da6304;
+$bean: #3d0c02;
+$bubblegum: #eec1be;
 
 /*-----Project Color Variables-----*/
-$calm-blue: #1261A6; 
-$sophisticated-teal: #025E73; 
-$mellow-skyblue: #29A7D9;
-$serene-midnight: #041E40; 
-$relaxed-silver: #B8BCBF; 
-$white: #fff;
+$rich-black: #0a0908;
+$tyrian-purple: #4f0322;
+$cultered: #f2f4f3;
+$silky-sand: #a9927d;
+$cool-brown: #5e503f;
 
 /*-----Functional Color Variables-----*/
-$color-main: $calm-blue;
-$color-main-transparent: rgba($color-main, .5);
+$color-main: $tyrian-purple;
+$color-main-transparent: rgba($color-main, 0.5);
 $color-main-light: lighten($color-main, 3%);
 $color-main-lightest: lighten($color-main, 50%);
 $color-main-dark: darken($color-main, 15%);
 $color-main-darkest: darken($color-main, 25%);
-$color-secondary: $relaxed-silver;
-$color-accent: $mellow-skyblue;
+$color-secondary: $cool-brown;
+$color-accent: $silky-sand;
 $color-accent-light: lighten($color-accent, 35%);
 
 //background colors
-$color-bg: $serene-midnight;
+$color-bg: $rich-black;
 $color-bg-dark: darken($color-bg, 20%);
 $color-bg-darkest: darken($color-bg, 40%);
-$color-bg-light: lighten($silver-surfer, 10%);
-$color-shadow: rgba($black, .5);
-$color-bg-footer: $serene-midnight;
-$color-bg-header: $serene-midnight;
+$color-bg-light: lighten($color-bg, 10%);
+$color-shadow: rgba($color-bg, 0.5);
+$color-dashboard: $cultered;
 
 //Link colors
-$color-link-default: $white;
-$color-link-active: $silver-surfer;
-$color-link-hover: $sophisticated-teal;
-$color-link-visited: $silver-surfer;
+$color-link-default: $color-accent;
+$color-link-active: darken($color-accent, 15%);
+$color-link-hover: $cultered;
+$color-link-focus: $cultered;
+$color-link-visited: $rich-black;
 
 //Border Colors
 $color-border-light: $color-accent;
 $color-border-dark: $color-main;
 
 //Headings & Paragraph Colors
-$color-text-light: $white; 
+$color-text-light: $white;
 $color-text-base: $grey;
 $color-text-dark: $tire-wheel;
 
 //Button Colors
-$color-link-button-default: $color-main;
-/*
-I won't be using these variables for this project
-// $button-success: #09E827;
-// $button-error: #D13219;
-// $button-warning: #FF760D;
-// $button-info: #693D80;
-*/
+$button-default: $color-main;
+$button-success: #09e827;
+$button-error: #d13219;
+$button-warning: #ff760d;
+$button-info: #693d80;
+
 //layout
 $max-width: 1200px;
 $gutter: 15px;
 $header-height: 600px;
 $footer-height: 100px;
 
-//Font Stacks 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;1,400&family=Raleway&display=swap');
-$font-stack-bangers: 'Lato', sans-serif;
-$font-stack-montserrat: 'Raleway', sans-serif;
+//Font Stacks
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Work+Sans:wght@100;300;700&display=swap');
+$font-stack-work-sans: 'Work Sans', sans-serif; //Headings fonts
+$font-stack-open-sans: 'Open Sans', sans-serif; //Main Website font
 $base-font-size: 16px;
 
 //border radius
@@ -104,7 +101,7 @@ $desktop-view: 1024px;
 
 // Media Query Breakpoint Map
 $breakpoints: (
-'sm': $mobile-view,    
-'md': $tablet-view,
-'lg': $desktop-view,
+	'sm': $mobile-view,
+	'md': $tablet-view,
+	'lg': $desktop-view,
 );
