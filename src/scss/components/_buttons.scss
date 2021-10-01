@@ -3,20 +3,18 @@
 // **************************************
 @use '../utilities' as *;
 //button styles for project card overlay
-.btn__overlay--full{
-    @extend %btn-properties;
-    &:hover{
-
-    }
-    @include mq ('md'){
-    }
+.btn__overlay--full {
+	@extend %btn-properties;
+	color: $color-main;
+	@include mq('md') {
+	}
 }
 
-.btn__overlay--outline{
-    @extend %btn-properties;
-    &:hover{
-
-    }
-    @include mq ('md'){
-    }
+.btn__overlay--outline {
+	@extend %btn-properties;
+	color: $white;
+	background: transparent;
+	border-color: $white;
+	@include mq('md') {
+	}
 }
