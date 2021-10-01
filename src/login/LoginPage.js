@@ -1,6 +1,5 @@
 import React from "react";
 import { BsEnvelope, BsShieldLock } from "react-icons/bs";
-// import { BiGroup } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";
 
 const LoginPage = () => {
