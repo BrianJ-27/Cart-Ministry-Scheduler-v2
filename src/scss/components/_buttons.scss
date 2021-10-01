@@ -11,7 +11,9 @@ button {
 
 .btn__overlay--full {
 	@extend %btn-properties;
+	background-color: $white;
 	color: $color-main;
+	-webkit-appearance: none;
 	@include mq('md') {
 	}
 }
