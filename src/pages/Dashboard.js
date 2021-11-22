@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import ProfileBlock from '../profile/index';
+import DashContent from '../components/DashContent'
+import DashHeader from '../components/DashHeader'
 
-const DashNav = () => {
+const Dashboard = () => {
   //hardcoded user profile
   const userProfile = {
     firstName: 'Brian',
@@ -11,6 +14,8 @@ const DashNav = () => {
   };
 
   return (
+    <div className="grid__wrapper">
+    <DashHeader/>
     <nav>
       <div className="nav__header--container">
         <ProfileBlock userProfile={userProfile} />
@@ -18,24 +23,16 @@ const DashNav = () => {
       <div>
         <ul className="nav__wrapper">
           <li className="nav__item">
-            <a className="nav__link" href="#a">
-              Dashboard
-            </a>
+            <Link className="nav__link" to="/dashboard">Dashboard</Link>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="#a">
-              Add Shift
-            </a>
+            <Link className="nav__link" to="/add-shift">Add Shift</Link>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="#a">
-              Publishers
-            </a>
+            <Link className="nav__link" to="/publishers">Publishers</Link>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="#a">
-              Cart Locations
-            </a>
+            <Link className="nav__link" to="/cart-location">Cart Locations</Link>
           </li>
         </ul>
       </div>
@@ -43,7 +40,10 @@ const DashNav = () => {
         <a href="/get-help">Get Help</a>
       </div>
     </nav>
+    <DashContent/>
+    </div>
+    
   );
 };
 
-export default DashNav;
+export default Dashboard;
