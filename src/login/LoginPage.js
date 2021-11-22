@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { BsEnvelope, BsShieldLock } from "react-icons/bs";
 import { FaUsers } from "react-icons/fa";
-// import DashBoardNav from "../components/DashNavigation"
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const LoginPage = () => {
+
+   let history = useHistory();
+	
   const [inputField, setInputField] = useState({
     email: "",
     password: "",
@@ -20,13 +22,8 @@ const LoginPage = () => {
   };
 
   const handleSubmitForm = () => {
-    // e.preventDefault();
-    // console.log(`Form Submission Details:
-	// 			${inputField.email}
-	// 			${inputField.password}
-	// 			${inputField.isChecked}
-	// 			`);
-
+   history.push("/dashboard");
+   console.log("You have entered the application");
   };
 
   return (
