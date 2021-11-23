@@ -1,10 +1,8 @@
-// import { makeStyles } from '@material-ui/styles';
 import React from 'react';
 import { FlexBox } from '../../shared/FlexBox';
 import ProfilePicture from './ProfilePicture';
 
 export default function ProfileBlock({ userProfile }) {
-//  const classes = useStyles(); 
   const fullName = `${userProfile.firstName} ${userProfile.lastName}`;
 
   return (
