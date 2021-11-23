@@ -11,7 +11,7 @@ export const FlexBox = (props) => {
         position: 'relative',
         flex: { flex },
         flexDirection: props.flexDirection || 'row',
-        flexWrap: props.flexWrap || 'nowrap',
+        flexWrap: props.flexWrap || 'wrap',
         alignItems: props.alignItems || 'stretch',
         alignContent: props.alignContent || 'stretch',
         justifyContent: props.justifyContent || 'center',
