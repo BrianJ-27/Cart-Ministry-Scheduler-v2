@@ -31,14 +31,17 @@ a {
 	display: inline-block;
 	padding: 0.6rem;
 	text-decoration: underline #fff;
+	color: u.$color-accent;
 }
 
 header {
-	background-color: u.$color-secondary;
+	background-color: u.$color-dashboard;
+	border-bottom: 2px inset u.$color-secondary;
 }
 
 nav {
-	background-color: coral;
+	background: linear-gradient(to left, u.$color-bg, u.$color-main , u.$color-bg);
+	height: 100%;
 }
 
 footer {

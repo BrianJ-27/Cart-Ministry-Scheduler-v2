@@ -19,6 +19,8 @@ const useStyles = makeStyles(
     picture: {
       maxWidth: '100%',
       maxHeight: '100%',
+      width: '100%',
+      backgroundColor: '#fff'
     },
   }),
   'ProfilePicture'

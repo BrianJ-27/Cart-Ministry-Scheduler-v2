@@ -1,15 +1,11 @@
 import React from 'react';
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ProfileBlock from '../profile/index';
 import DashContent from '../components/DashContent'
 import DashHeader from '../components/DashHeader'
 
-const Dashboard = ({ authorized }) => {
+const Dashboard = () => {
 
-  // if (!authorized) {
-  //   return <Redirect to="/"/>
-  // }
-  //hardcoded user profile
   const userProfile = {
     firstName: 'Brian',
     lastName: 'Johnson',
@@ -27,10 +23,10 @@ const Dashboard = ({ authorized }) => {
       <div>
         <ul className="nav__wrapper">
           <li className="nav__item">
-            <Link className="nav__link" to="/">Dashboard</Link>
+            <Link className="nav__link" to="/dashboard">Dashboard</Link>
           </li>
           <li className="nav__item">
-            <Link className="nav__link" to="/addshift">Add Shift</Link>
+             <Link className="nav__link" to="/addshift">Add Shift</Link>
           </li>
           <li className="nav__item">
             <Link className="nav__link" to="/publishers">Publishers</Link>

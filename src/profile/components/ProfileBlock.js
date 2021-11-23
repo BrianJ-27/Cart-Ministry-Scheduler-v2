@@ -22,15 +22,3 @@ export default function ProfileBlock({ userProfile }) {
   );
 }
 
-// const useStyles = makeStyles(
-//   (theme) => ({
-//     userName: {
-//       fontSize: theme.fonts.baseFontSize,
-//     },
-//     userRole: {
-//       fontSize: theme.fonts.smallFontSize,
-//       color: theme.colors.sereneMidnight,
-//     },
-//   }),
-//   { name: 'ProfileBlock' }
-// );

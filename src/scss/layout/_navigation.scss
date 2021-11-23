@@ -38,14 +38,14 @@
 .nav__link{
     text-transform: uppercase;
     text-decoration: none;
-    color: $color-link-default;
+    color: $color-accent ;
     transition: color .5s;
     &:active,:focus{
 
         color: $color-link-active ;
         }
     &:hover{
-        color: $white;
+        color: $white ;
 
         text-decoration: none;
         }

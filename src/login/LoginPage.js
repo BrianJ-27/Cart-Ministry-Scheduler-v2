@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { BsEnvelope, BsShieldLock } from "react-icons/bs";
 import { FaUsers } from "react-icons/fa";
-import { useHistory } from "react-router-dom";
+import { useHistory,  } from "react-router-dom";
 
 const LoginPage = () => {
-
+   
    let history = useHistory();
 	
   const [inputField, setInputField] = useState({
@@ -13,17 +13,18 @@ const LoginPage = () => {
     isChecked: false,
   });
 
-  const inputUpdate = (e) => {
-    const target = e.target;
+  const inputUpdate = ({ target }) => {
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
     setInputField({ ...inputField, [name]: value, });
-    // setInputField( {...inputField, [e.target.name]: e.target.value} );
   };
 
-  const handleSubmitForm = () => {
+  const handleSubmitForm = (e) => {
+	  e.preventDefault();
    history.push("/dashboard");
    console.log("You have entered the application");
+    console.log(inputField); 
+	  
   };
 
   return (
@@ -48,7 +49,6 @@ const LoginPage = () => {
                     id="email"
                     type="email"
                     name="email"
-                    // autoComplete="off"
                     placeholder=" "
                     value={inputField.email}
                     onChange={e => inputUpdate(e)}
@@ -74,7 +74,7 @@ const LoginPage = () => {
                   <div>
                     <input
                       type="checkbox"
-                      name="checkbox"
+                      name="isChecked"
                       defaultChecked={inputField.isChecked}
                       onChange={e => inputUpdate(e)}
                     />
