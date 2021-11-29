@@ -12,44 +12,74 @@
 
 // Navigation Header Where logo and close btn are located
   .nav__header--container{
-
+   text-align: center;
+   padding-top: 1rem;
   }
 
 .nav__title{
-
+  color: $color-accent;
+ text-align: center;
+ @include mq('md') {
+  font-size: 1.3rem;
 }
-.close__btn{
+ @include mq('lg') {
+  font-size: 1.1rem;
+}
+}
 
+.nav__name {
+  color: $color-accent;
+  font-size: .8rem;
+  padding-bottom: 5px;
+  @include mq('md') {
+    font-size: 1.3rem;
+  }
+  @include mq('lg') {
+    font-size: 1.1rem;
+  }
+}
+
+.nav__role {
+  color: $white;
+  font-size: .7rem;
+  text-align: center;
+  @include mq('md') {
+    font-size: 1.1rem;
+  }
+  @include mq('lg') {
+    font-size: .9rem;
+  }
 }
 
 //main nav <ul> styles
 .nav__wrapper{
+  position: absolute;
+  top: 25%;
 }
 
 //main nav <li> styles
 .nav__item{
-    @include flex_me($vertAlign:center);
-    &:hover{
-        padding-left: 30px;
-    }
+    @include flex_me( $vertAlign: center );
+    padding-bottom: 1rem;
 }
 
 // <a> link styles
 .nav__link{
     text-transform: uppercase;
     text-decoration: none;
-    color: $color-accent ;
+    color: $white ;
     transition: color .5s;
-    &:active,:focus{
+    padding-left: 5px;
+    &:active, &:focus{
 
         color: $color-link-active ;
         }
-    &:hover{
-        color: $white ;
+    &:hover, &:visited{
+        color: $color-link-hover;
 
         text-decoration: none;
         }
-    &:visited{
-        color: $color-link-visited;
-    }
+        @include mq('md') {
+          padding-left: 5px;
+        }
 }

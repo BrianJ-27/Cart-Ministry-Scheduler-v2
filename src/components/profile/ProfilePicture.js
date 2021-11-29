@@ -14,13 +14,14 @@ export default function ProfilePicture({ profilePicture }) {
 const useStyles = makeStyles(
   (theme) => ({
     pictureContainer: {
-      flex: '1',
+      padding: '.5rem 0'
     },
     picture: {
       maxWidth: '100%',
       maxHeight: '100%',
-      width: '100%',
-      backgroundColor: '#fff'
+      width: '55%',
+      backgroundColor: '#fff',
+      borderRadius: '50%',
     },
   }),
   'ProfilePicture'

@@ -4,10 +4,15 @@ import { ThemeProvider } from "@material-ui/styles";
 import theme from "./scss/theme";
 import "./scss/style.scss";
 import App from "./App";
+import { HashRouter as Router } from "react-router-dom";
+
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <App />
-  </ThemeProvider>,
+  <Router >
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+  </Router>,
+
   document.getElementById("root")
 );
