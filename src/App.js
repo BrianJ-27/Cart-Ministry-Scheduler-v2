@@ -1,17 +1,19 @@
 import React from "react";
-import LoginPage from "./login/LoginPage";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
-import DashboardHome from "./pages/Dashboard";
-import AddShift from "./pages/AddShift";
-import CartLocation from "./pages/CartLocation";
-import Publishers from "./pages/Publishers";
+import LoginPage from "./components/login/LoginPage";
+import { Switch, Route } from "react-router-dom";
+import DashboardHome from "./components/pages/Dashboard";
+import AddShift from "./components/pages/AddShift";
+import CartLocation from "./components/pages/CartLocation";
+import Publishers from "./components/pages/Publishers";
+
+
 
 const App = () => {
   return (
-    <Router>
+    <>
       <Switch>
         <Route exact path="/" component={LoginPage} />
-         
+
         <Route path="/dashboard" component={DashboardHome} />
 
         <Route path="/addshift" component={AddShift} />
@@ -20,7 +22,7 @@ const App = () => {
 
         <Route path="/publishers" component={Publishers} />
       </Switch>
-    </Router>
+    </>
   );
 };
 

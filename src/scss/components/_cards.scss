@@ -1,0 +1,12 @@
+// **************************************
+// CARD STYLES
+// **************************************
+@use '../utilities' as *;
+
+.card__header{
+    background: $color-accent;
+    color: $color-bg;
+    padding: 5px !important;
+    font-weight: 200;
+    border-bottom: 1px solid $color-bg;
+}

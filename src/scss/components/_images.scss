@@ -10,10 +10,13 @@
 
 // main nav SVG icons to the left of the links
 .nav__icon {
-	fill: $color-secondary;
-	width: 20px;
-	height: 20px;
-	margin-right: 0.5em;
+	fill: $color-accent;
+	width: 25px;
+	height: 25px;
+	@include mq('md') {
+		width: 30px;
+		height: 30px;	
+	}
 }
 
 .icon__header--container {

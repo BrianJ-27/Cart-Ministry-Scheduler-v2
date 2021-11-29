@@ -29,9 +29,9 @@ p {
 
 a {
 	display: inline-block;
-	padding: 0.6rem;
+	padding: 0.6rem 0;
 	text-decoration: underline #fff;
-	color: u.$color-accent;
+	color: u.$white;
 }
 
 header {
@@ -40,8 +40,10 @@ header {
 }
 
 nav {
-	background: linear-gradient(to left, u.$color-bg, u.$color-main , u.$color-bg);
+	background: linear-gradient(to right, u.$color-main , u.$color-bg);
 	height: 100%;
+	position: relative;
+	padding: 0 .5rem 
 }
 
 footer {

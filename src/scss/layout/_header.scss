@@ -3,7 +3,7 @@
 // **************************************
 @use '../utilities' as *;
 .header__container{
-
+    @include flex_me( $dir: column, $just: center, $vertAlign: center)
 }
 
 /*---Container is the header bar that holds the nav menu & resume container --*/
