@@ -1,14 +1,19 @@
 // **************************************
 // HEADER STYLES
 // **************************************
-@use '../utilities' as *;
+@use '../utilities/mixins' as *;
 .header__container{
-    @include flex_me( $dir: column, $just: center, $vertAlign: center)
+    @include flex_me( $dir: column, $just: center, $vertAlign: center);
+    padding-left: 1rem;
 }
 
 /*---Container is the header bar that holds the nav menu & resume container --*/
 .header__bar--container{
 
+}
+
+.profile__caption {
+    padding-left: 4px;
 }
 
 .header__btn--menu{

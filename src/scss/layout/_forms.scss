@@ -7,6 +7,9 @@
 	padding: 0 1em;
 	background-image: linear-gradient(to right, $color-main 50%, $color-bg);
 	color: $white;
+	position: absolute;
+	left: 0;
+	right: 0;
 }
 
 .header__form {
