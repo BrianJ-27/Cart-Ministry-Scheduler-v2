@@ -6,8 +6,7 @@ import Typography from "@mui/material/Typography";
 
 const DashContent = () => {
   return (
-    <>
-      <main className="main__grid--wrapper">
+      <main  className="main__grid--wrapper">
         <Card >
           <CardHeader 
             className="card__header"
@@ -33,7 +32,6 @@ const DashContent = () => {
           </CardContent>
         </Card>
       </main>
-    </>
   );
 };
 

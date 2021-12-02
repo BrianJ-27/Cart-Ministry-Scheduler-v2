@@ -5,12 +5,10 @@
 /*------FLEXBOX LAYOUT STYLES-----------*/
 
 //flex styles
-.flex__container {
-  @include flex_me( $wrap: wrap );
-}
-
-.flex__container--between {
-  @include flex_me( $dir: column, $just: space-between );
+.flex__container--space-between {
+  @include mq('md') {
+    @include flex_me( $dir: column, $wrap: wrap, $just: space-between );
+  }
 }
 
 /*------GRID LAYOUT STYLES-----------*/
@@ -18,15 +16,12 @@
 .grid__wrapper {
   height: 100vh;
   display: grid;
-  grid-auto-columns: 120px 1fr;
-  grid-template-rows: 110px auto;
+  grid-auto-columns: 1fr;
+  grid-template-rows: 100px auto 75px;
   grid-template-areas:
-      "navigation header"
-      "navigation main "
-      "navigation main"
-      "navigation main"
-      "navigation main"
-      "navigation main";
+      "header"
+      "main " 
+      "navigation";
 
   @include mq('md') {
     grid-template-columns: 200px 1fr 1fr;

@@ -10,12 +10,14 @@
 
 // main nav SVG icons to the left of the links
 .nav__icon {
-	fill: $color-accent;
 	width: 25px;
 	height: 25px;
+	padding-bottom: 5px;
 	@include mq('md') {
 		width: 30px;
-		height: 30px;	
+		height: 30px;
+		padding-right: 5px;	
+		padding-bottom: 0px;
 	}
 }
 
@@ -41,11 +43,4 @@
 .form__icons {
 	color: $white;
 	margin-right: 1em;
-}
-
-// Styling for SVG social media icons
-.footer__icons {
-	width: 100px;
-	height: 100px;
-	padding: 1em;
 }

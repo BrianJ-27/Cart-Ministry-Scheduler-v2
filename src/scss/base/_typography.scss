@@ -53,7 +53,7 @@
 
 // link styles
 .link__text {
-  @include text-prop($size: .7rem, $f-weight: 500);
+  @include text-prop($size: .5rem, $f-weight: 500);
   @include mq("md") {
     @include text-prop($size: .95em, $f-weight: 500);
   }
