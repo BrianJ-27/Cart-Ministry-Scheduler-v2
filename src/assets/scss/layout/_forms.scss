@@ -1,0 +1,118 @@
+@use '../utilities' as *;
+
+.section__form {
+  height: 100vh;
+  @include flex_me($vertAlign: center, $just: center);
+  padding: 0 1em;
+  background-image: linear-gradient(to right, var(--clr-primary-color) 50%, var(--clr-bg-dark));
+  color: var(--clr-bg-light);
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.header__form {
+  color: var(--clr-bg-light);
+  h2 {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 100;
+    margin: 1rem 0;
+    letter-spacing: 1.5px;
+    text-align: center;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    color: #fff;
+    font-size: 0.8rem;
+    @include mq('md') {
+      font-size: 1rem;
+    }
+  }
+}
+
+fieldset {
+  padding: 0;
+}
+
+.flex__form {
+  @include flex_me($dir: column);
+  button {
+    border-color: var(--clr-accent-color);
+    outline: none;
+    transition: all 0.3s ease-out;
+    &:hover {
+      background-color: var(--clr-accent-color);
+      color: var(--clr-bg-light);
+      transition: all 0.3s ease-in;
+    }
+  }
+}
+
+.form__field {
+  position: relative;
+  width: 85%;
+  left: 6%;
+  label {
+    position: absolute;
+    top: 0;
+    left: 2.6rem;
+    color: var(--clr-bg-light);
+    top: 2rem;
+    cursor: text;
+    transition: top 200ms ease-in, left 200ms ease-in;
+    background-color: var(--clr-primary-color);
+  }
+}
+
+.form__input:focus ~ label,
+.form__input:not(:placeholder-shown).form__input:not(:focus) ~ label {
+  top: 1rem;
+  font-size: 0.8em;
+}
+
+input[type='email'],
+input[type='password'] {
+  border-radius: 5px;
+  height: 2em;
+  margin-top: 1.5em;
+  width: inherit;
+  outline: none;
+  border: 2px solid var(--clr-bg-light);
+  background: transparent;
+  color: white;
+  font-family: inherit;
+  &:hover,
+  &:focus {
+    border-color: var(--clr-accent-color);
+  }
+}
+
+input[type='checkbox'] {
+  width: auto;
+  height: auto;
+  margin-right: 0.3em;
+  accent-color: var(--clr-accent-color);
+}
+
+.flex__checkbox {
+  @include flex_me($just: space-between);
+  margin: 1em 0;
+  color: var(--clr-bg-light);
+  div {
+    @include flex_me($vertAlign: center);
+  }
+  span,
+  a {
+    font-size: 0.8rem;
+    @include mq('md') {
+      font-size: 1rem;
+    }
+  }
+  a {
+    color: var(--clr-bg-light);
+    text-decoration: underline var(--clr-accent-color);
+  }
+}
