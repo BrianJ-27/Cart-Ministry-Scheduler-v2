@@ -1,0 +1,30 @@
+// **************************************
+// THEME COLOR MAP
+// **************************************
+/*
+Color Wheel:
+  Black: hsl(255, 0%, 0%)
+  Dark Grey: hsl(237, 12%, 33%)
+  Grey: hsl(240, 6%, 50%)
+  White: hsl(255, 100%, 100%)
+*/
+$colors: (
+  // Primary Project Color
+  primary: (
+    color: hsl(366, 93%, 16%)
+  ),
+  // Header Project Color
+  header:(
+    color:  hsl(0, 0%, 4%)
+  ),
+  // Accent Project Color
+  accent: (
+    color: hsl(28, 22%, 57%)
+  ),
+  // Background Dashboard Color
+  bg: (
+    color:  hsl(180, 8%, 95%),
+    light: hsl(255, 100%, 100%),
+    dark: hsl(255, 0%, 0%)
+  ),
+);

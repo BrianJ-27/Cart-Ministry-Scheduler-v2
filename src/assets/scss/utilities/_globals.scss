@@ -1,0 +1,47 @@
+// **************************************
+// GLOBAL SCSS VARIABLES
+// **************************************
+@use "./colors" as *;
+@use "./breakpoints" as *;
+@use "./fonts" as *;
+
+/*
+Global Custom Properties:
+  *COLORS*
+    Primary Color: hsl(366, 93%, 16%)
+    Header Color: hsl(0, 0%, 4%)
+    Accent Color: hsl(28, 22%, 57%)
+    Background Color: hsl(180, 8%, 95%)
+    Black: hsl(255, 0%, 0%)
+    white: hsl(255, 100%, 100%)
+  *FONT PROPERTIES*
+    font-size: 1rem;
+    font-weight: 400;
+    font-family Work San, sans-serif;
+    line-height: 1.5;
+  *lAYOUT PROPERTIES*
+    max-width: 1200px;
+    space: 15px;
+    border-radius: 10px;
+*/
+
+:root {
+  /*-----Color Custom Properties-----*/
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --clr-#{$color}-#{$shade}: #{$value};
+    }
+  }
+
+  /*-----Font Custom Properties-----*/
+  @each $font, $props in $font-love {
+    @each $prop, $value in $props {
+      --fp-#{$font}-#{$prop}: #{$value};
+    }
+  }
+
+  /*-----Layout Custom Properties-----*/
+  --max-width: 1200px;
+  --space: 15px;
+  --curved-radius: 10px;
+}
