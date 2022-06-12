@@ -1,42 +1,69 @@
 import React from "react";
-import LoginPage from "./components/login/LoginPage";
-import { Switch, Route } from "react-router-dom";
-import DashboardHome from "./components/pages/Dashboard";
+import LoginPage from "./components/layout/login/LoginPage";
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./components/pages/Dashboard";
 import AddShift from "./components/pages/AddShift";
 import CartLocation from "./components/pages/CartLocation";
 import Publishers from "./components/pages/Publishers";
-import DashHeader from "./components/dashboard/DashHeader"
-import DashNav from "./components/dashboard/DashNav";
+import Header from "./components/layout/header/Header";
+import DashNav from "./components/layout/nav/Nav";
+import { auth } from "./firebase/firebase.config";
 
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      userProfile: {
+        firstName: "Brian",
+        lastName: "Johnson",
+        role: "Administrator",
+        congregation: "East Tampa",
+        profilePicture: "https://avatars.githubusercontent.com/u/45458265?v=4",
+      },
+      currentUser: null,
+    };
+  }
 
-const App = () => {
+  unsubscribeFromAuth = null;
 
-  const userProfile = {
-    firstName: "Brian",
-    lastName: "Johnson",
-    role: "Administrator",
-    congregation: "East Tampa",
-    profilePicture: "https://avatars.githubusercontent.com/u/45458265?v=4",
-  };
+  componentDidMount() {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
+      this.setState({ currentUser: user });
+      console.log(user);
+    });
+  }
 
-  return (
-    <div className="grid__wrapper">
-    <DashHeader userProfile={userProfile} />
-    <DashNav userProfile={userProfile} />
-      <Switch>
-        <Route exact path="/" component={LoginPage} />
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
+  }
 
-        <Route path="/dashboard" component={DashboardHome} />
-
-        <Route path="/addshift" component={AddShift} />
-
-        <Route path="/cartlocation" component={CartLocation} />
-
-        <Route path="/publishers" component={Publishers} />
-      </Switch>
-    </div>
-  );
-};
+  render() {
+    return (
+      <div className="grid__wrapper">
+        <Header
+          userProfile={this.state.userProfile}
+          currentUser={this.state.currentUser}
+        />
+        <DashNav
+          userProfile={this.state.userProfile}
+          currentUser={this.state.currentUser}
+        />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            component={LoginPage}
+            currentUser={this.state.currentUser}
+          />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/addshift" element={<AddShift />} />
+          <Route path="/cartlocation" element={<CartLocation />} />
+          <Route path="/publishers" element={<Publishers />} />
+        </Routes>
+      </div>
+    );
+  }
+}
 
 export default App;

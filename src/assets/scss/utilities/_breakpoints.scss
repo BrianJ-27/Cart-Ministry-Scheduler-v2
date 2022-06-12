@@ -1,0 +1,15 @@
+// **************************************
+// BREAKPOINT VARIABLES
+// **************************************
+
+//Breakpoint Sizes
+$mobile-view: 320px;
+$tablet-view: 768px;
+$desktop-view: 1024px;
+
+// Media Query Breakpoint Map
+$breakpoints: (
+  "sm": $mobile-view,
+  "md": $tablet-view,
+  "lg": $desktop-view,
+);

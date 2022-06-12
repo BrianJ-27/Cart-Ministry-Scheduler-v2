@@ -1,13 +1,8 @@
 import React from "react";
-import DashContent from "../dashboard/DashContent";
-import DashHeader from "../dashboard/DashHeader";
-import DashNav from "../dashboard/DashNav";
+import Cards from "../reusable/cards/Cards";
 
-const DashboardMain = () => {
-
-  return (
-      <DashContent />
-  );
+const Dashboard = () => {
+  return <Cards />;
 };
 
-export default DashboardMain;
+export default Dashboard;
