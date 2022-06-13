@@ -4,5 +4,7 @@
 // **************************************
 
 //use base partials here:
-@use 'base';
-@use 'layout';
+@use "base";
+
+// Use State Partials here:
+@use "state";
