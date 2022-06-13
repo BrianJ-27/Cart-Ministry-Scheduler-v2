@@ -21,7 +21,7 @@ const HeaderContainer = styled.header`
 
 const Header = ({ userProfile }) => {
   return (
-    <HeaderContainer className="header__container">
+    <HeaderContainer>
       <div>
         <ProfileBlock userProfile={userProfile} />
         <p>

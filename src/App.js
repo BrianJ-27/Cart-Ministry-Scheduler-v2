@@ -1,6 +1,6 @@
 import React from "react";
-import LoginPage from "./components/layout/login/LoginPage";
 import { Routes, Route } from "react-router-dom";
+import LoginPage from "./components/pages/LoginPage";
 import Dashboard from "./components/pages/Dashboard";
 import AddShift from "./components/pages/AddShift";
 import CartLocation from "./components/pages/CartLocation";
@@ -53,7 +53,7 @@ class App extends React.Component {
           <Route
             exact
             path="/"
-            component={LoginPage}
+            element={<LoginPage />}
             currentUser={this.state.currentUser}
           />
           <Route path="/dashboard" element={<Dashboard />} />

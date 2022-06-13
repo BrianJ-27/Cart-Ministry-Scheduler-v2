@@ -4,6 +4,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import theme from "./assets/scss/theme";
 import "./assets/scss/style.scss";
 import App from "./App";
+import LoginPage from "./components/pages/LoginPage";
 import { HashRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
