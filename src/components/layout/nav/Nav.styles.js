@@ -1,7 +1,25 @@
 import styled from "styled-components";
 
+// Main Dashboard Navigation Styles
+export const Navigation = styled.nav`
+  background: linear-gradient(
+    to right,
+    var(--clr-primary-color),
+    var(--clr-bg-dark)
+  );
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 0.5rem;
+  @media only screen and (min-width: 768px) {
+    height: 100%;
+    position: relative;
+  }
+`;
+
+// Nav ul Styles
 export const NavWrapper = styled.ul`
-  // Nav Wrapper Styles
   position: relative;
   list-style-type: none;
   display: flex;
@@ -20,6 +38,7 @@ export const NavWrapper = styled.ul`
     display: flex;
     align-items: center;
   }
+
   // Nav Link Styles
   a {
     display: flex;
@@ -27,7 +46,6 @@ export const NavWrapper = styled.ul`
     align-items: center;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--clr-bg-light);
     transition: color 0.5s;
     &:link {
       color: var(--clr-bg-light);
@@ -72,7 +90,7 @@ export const NavWrapper = styled.ul`
   }
 `;
 
-// Mobile Active Link Styles
+// Circular Mobile Active Link Styles
 export const NavIndicator = styled.span`
   width: 75px;
   height: 75px;
@@ -85,7 +103,6 @@ export const NavIndicator = styled.span`
   position: absolute;
   top: -30px;
   z-index: -1;
-  transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   @media only screen and (min-width: 768px) {
     position: unset;
     width: unset;
@@ -93,9 +110,4 @@ export const NavIndicator = styled.span`
     border-radius: unset;
     background: unset;
   }
-`;
-
-// Main Dashboard Navigation Styles
-export const Navigation = styled.nav`
-  background: linear-gradient(to right, #4f0322, #0a0908);
 `;

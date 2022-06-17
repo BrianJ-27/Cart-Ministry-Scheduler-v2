@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function ProfilePicture({ profilePicture }) {
   return (
     <div>
-      <Image src={profilePicture} />
+      <Image src={profilePicture} alt="publisher logo picture" />
     </div>
   );
 }

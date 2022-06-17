@@ -4,14 +4,9 @@
 @use "../utilities" as *;
 //h1 styles
 .title__primary {
-  @include text-prop($size: 1.28em, $f-weight: 400);
+  @include text-prop($size: clamp(1.28rem, 6vw, 2.5rem), $f-weight: 200);
   @extend %text-modules;
-  @include mq("md") {
-    @include text-prop($size: 1.8em, $f-weight: 500);
-  }
-  @include mq("lg") {
-    @include text-prop($size: 1.1em);
-  }
+  text-align: center;
 }
 
 //h2 styles
@@ -34,23 +29,22 @@
 
 /*----CONTEXT STYLES----*/
 
-.content__banner {
-  padding: 0 0 0.5em 0.5em;
-  @include text-prop($size: 1em, $f-weight: 800);
-  text-align: center;
-  @include mq("md") {
-    @include text-prop($size: 1.4em, $f-weight: bold);
-  }
-  @include mq("lg") {
-    @include text-prop($size: 1.8em, $f-weight: 900);
-  }
-}
-
 //content styles
 .content {
   padding: 0.5px;
+  &__header {
+    color: var(--clr-bg-light);
+    @include mq("md") {
+      color: var(--clr-bg-dark);
+    }
+  }
+
   &__form {
     text-align: center;
+    @include text-prop($size: clamp(0.7rem, 3vw, 1.2rem), $f-weight: 400);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    color: #fff;
   }
 }
 

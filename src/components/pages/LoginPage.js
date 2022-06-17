@@ -1,19 +1,16 @@
 import React from "react";
 import FormLogin from "../layout/form-login/form";
 import styled from "styled-components";
+import bgImage from "../../assets/images/bg-garden-image.jpg";
 
-const LoginScreenWrapper = styled.section`
+const LoginScreenWrapper = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  padding: 0 1em;
-  background-image: linear-gradient(
-    to right,
-    var(--clr-primary-color) 50%,
-    var(--clr-bg-dark)
-  );
-  color: var(--clr-bg-light);
+  background-color: var(--clr-primary-color);
+  background-repeat: no-repeat;
+  background-size: cover;
   position: absolute;
   left: 0;
   right: 0;

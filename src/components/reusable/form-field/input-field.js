@@ -31,6 +31,7 @@ const StyledInput = styled.input`
   ${(props) =>
     props.checkbox &&
     css`
+      margin-left: unset;
       margin-top: unset;
       width: auto;
       height: auto;
