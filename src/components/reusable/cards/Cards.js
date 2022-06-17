@@ -15,7 +15,7 @@ const CardHeader = styled.div`
 
 const Cards = () => {
   return (
-    <main className="main__grid--wrapper">
+    <div className="main__grid--wrapper">
       <Card>
         <CardHeader>My Schedule</CardHeader>
         <CardContent>
@@ -34,7 +34,7 @@ const Cards = () => {
           </Typography>
         </CardContent>
       </Card>
-    </main>
+    </div>
   );
 };
 

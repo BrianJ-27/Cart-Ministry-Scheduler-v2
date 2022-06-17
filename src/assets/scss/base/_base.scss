@@ -8,10 +8,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  // background: #000 !important;
-  // color: #0f0 !important;
-  // outline: solid #f00 1px !important;
 }
+
 html,
 body,
 #root {
@@ -22,6 +20,11 @@ body {
   font-family: var(--fp-font-main);
   line-height: 1;
   font-size: 1rem;
+  background-color: var(--clr-bg-dark);
+}
+
+main {
+  background-color: var(--clr-bg-color);
 }
 
 p {
@@ -33,29 +36,4 @@ a {
   padding: 0.6rem 0;
   text-decoration: underline var(--clr-bg-light);
   color: var(--clr-bg-light);
-}
-
-header {
-  background-color: var(--clr-bg-dark);
-  border-bottom: 2px inset var(--clr-accent-color);
-  @include mq("md") {
-    background-color: var(--clr-bg-color);
-  }
-}
-
-nav {
-  background: linear-gradient(
-    to right,
-    var(--clr-primary-color),
-    var(--clr-bg-dark)
-  );
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0 0.5rem;
-  @include mq("md") {
-    height: 100%;
-    position: relative;
-  }
 }

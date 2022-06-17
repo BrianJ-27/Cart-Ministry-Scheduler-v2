@@ -1,69 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import LoginPage from "./components/pages/LoginPage";
 import Dashboard from "./components/pages/Dashboard";
 import AddShift from "./components/pages/AddShift";
 import CartLocation from "./components/pages/CartLocation";
 import Publishers from "./components/pages/Publishers";
-import Header from "./components/layout/header/Header";
-import DashNav from "./components/layout/nav/Nav";
-import { auth } from "./firebase/firebase.config";
+import NoMatch from "./components/pages/NotFoundPage";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+const App = () => {
+  const [profile, setProfile] = useState({
+    userProfile: {
+      firstName: "Brian",
+      lastName: "Johnson",
+      role: "Administrator",
+      congregation: "East Tampa",
+      profilePicture: "https://avatars.githubusercontent.com/u/45458265?v=4",
+    },
+  });
 
-    this.state = {
-      userProfile: {
-        firstName: "Brian",
-        lastName: "Johnson",
-        role: "Administrator",
-        congregation: "East Tampa",
-        profilePicture: "https://avatars.githubusercontent.com/u/45458265?v=4",
-      },
-      currentUser: null,
-    };
-  }
+  const [currentUser, setCurrentUser] = useState(null);
 
-  unsubscribeFromAuth = null;
-
-  componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
-      this.setState({ currentUser: user });
-      console.log(user);
-    });
-  }
-
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
-
-  render() {
-    return (
-      <div className="grid__wrapper">
-        <Header
-          userProfile={this.state.userProfile}
-          currentUser={this.state.currentUser}
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route
+          path="/dashboard"
+          element={
+            <Dashboard
+              userProfile={profile.userProfile}
+              currentUser={currentUser}
+            />
+          }
         />
-        <DashNav
-          userProfile={this.state.userProfile}
-          currentUser={this.state.currentUser}
+        <Route
+          path="/addshift"
+          element={
+            <AddShift
+              userProfile={profile.userProfile}
+              currentUser={currentUser}
+            />
+          }
         />
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={<LoginPage />}
-            currentUser={this.state.currentUser}
-          />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/addshift" element={<AddShift />} />
-          <Route path="/cartlocation" element={<CartLocation />} />
-          <Route path="/publishers" element={<Publishers />} />
-        </Routes>
-      </div>
-    );
-  }
-}
+        <Route
+          path="/cartlocation"
+          element={
+            <CartLocation
+              userProfile={profile.userProfile}
+              currentUser={currentUser}
+            />
+          }
+        />
+        <Route
+          path="/publishers"
+          element={
+            <Publishers
+              userProfile={profile.userProfile}
+              currentUser={currentUser}
+            />
+          }
+        />
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+    </div>
+  );
+};
 
 export default App;

@@ -7,6 +7,21 @@ import StyledButton from "../../reusable/button/button";
 import FormField from "../../reusable/form-field/input-field";
 import styled from "styled-components";
 
+const FormContainer = styled.div`
+  position: relative;
+  box-shadow:     
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.3) inset;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.5) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.5) inset;;
+  padding: clamp(0.5rem, 3vw, 3rem);
+  border-radius: 8px;
+  width: calc(100% - 1rem);
+  margin: auto;
+  @media only screen and (min-width: 768px) {
+      width: max(500px, 550px);
+    }
+`;
+
 const FormHeader = styled.div`
   color: var(--clr-bg-light);
   h2 {
@@ -17,18 +32,14 @@ const FormHeader = styled.div`
     letter-spacing: 1.5px;
     text-align: center;
   }
-
-  p {
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-    color: #fff;
-    font-size: clamp(0.8rem, 2vw, 1rem);
-  }
 `;
 
 const FormIconWrapper = styled.div`
   text-align: center;
   font-size: 8rem;
+  svg.form__icons--header {
+    fill: var(--clr-bg-dark);
+  }
 `;
 
 const FormWrapper = styled.div`
@@ -40,6 +51,10 @@ const FormGroup = styled.div`
   position: relative;
   width: 86%;
   left: 6%;
+
+  svg.form__icons {
+    fill: var(--clr-bg-light);
+  }
 `;
 
 const CheckBoxWrapper = styled.div`
@@ -65,10 +80,10 @@ const Form = () => {
   const { handleUpdate, handleLogin, formData, errors } = useForm(validate);
 
   return (
-    <div>
+    <FormContainer>
       <FormHeader>
-        <h2>Publisher Portal</h2>
-        <FormIconWrapper className="icon__header--container">
+        <h1 className="title__primary">Publisher Portal</h1>
+        <FormIconWrapper>
           <FaUsers className="form__icons--header" />
         </FormIconWrapper>
         <p className="content__form">
@@ -117,6 +132,7 @@ const Form = () => {
                     checkbox
                     type="checkbox"
                     name="isChecked"
+                    aria-label="Checkbox Input Field"
                     // checked={isChecked}
                     onChange={(e) => handleUpdate(formData.isChecked, e)}
                   />
@@ -126,14 +142,12 @@ const Form = () => {
                   <a href="#a">Forgot Password&#63;</a>
                 </p>
               </CheckBoxWrapper>
-              <StyledButton className="btn__overlay--full" type="submit">
-                Login
-              </StyledButton>
+              <StyledButton className="btn__overlay--full">Login</StyledButton>
             </FormWrapper>
           </fieldset>
         </form>
       </div>
-    </div>
+    </FormContainer>
   );
 };
 
