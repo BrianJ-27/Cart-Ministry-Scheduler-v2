@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import Header from "./components/layout/header/Header";
+import DashboardNav from "./components/layout/nav/Nav";
 import LoginPage from "./components/pages/LoginPage";
 import Dashboard from "./components/pages/Dashboard";
 import AddShift from "./components/pages/AddShift";
@@ -9,57 +11,43 @@ import NoMatch from "./components/pages/NotFoundPage";
 
 const App = () => {
   const [profile, setProfile] = useState({
-    userProfile: {
-      firstName: "Brian",
-      lastName: "Johnson",
-      role: "Administrator",
-      congregation: "East Tampa",
-      profilePicture: "https://avatars.githubusercontent.com/u/45458265?v=4",
-    },
+    firstName: "Brian",
+    lastName: "Johnson",
+    role: "Administrator",
+    congregation: "East Tampa",
+    profilePicture: "https://avatars.githubusercontent.com/u/45458265?v=4",
   });
 
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <div>
+    <div className="grid__wrapper">
+      {isLoggedIn && (
+        <React.Fragment>
+          <Header userProfile={profile} />
+          <DashboardNav
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+            showLayout={isLoggedIn}
+            setShowLayout={setIsLoggedIn}
+          />
+        </React.Fragment>
+      )}
       <Routes>
-        <Route path="/" element={<LoginPage />} />
         <Route
-          path="/dashboard"
+          path="/"
           element={
-            <Dashboard
-              userProfile={profile.userProfile}
-              currentUser={currentUser}
+            <LoginPage
+              setShowLayout={setIsLoggedIn}
+              setCurrentUser={setCurrentUser}
             />
           }
         />
-        <Route
-          path="/addshift"
-          element={
-            <AddShift
-              userProfile={profile.userProfile}
-              currentUser={currentUser}
-            />
-          }
-        />
-        <Route
-          path="/cartlocation"
-          element={
-            <CartLocation
-              userProfile={profile.userProfile}
-              currentUser={currentUser}
-            />
-          }
-        />
-        <Route
-          path="/publishers"
-          element={
-            <Publishers
-              userProfile={profile.userProfile}
-              currentUser={currentUser}
-            />
-          }
-        />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/addshift" element={<AddShift />} />
+        <Route path="/cartlocation" element={<CartLocation />} />
+        <Route path="/publishers" element={<Publishers />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>

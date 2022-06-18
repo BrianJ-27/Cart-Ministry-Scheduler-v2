@@ -1,14 +1,13 @@
 import React from "react";
 import FormLogin from "../layout/form-login/form";
 import styled from "styled-components";
-import bgImage from "../../assets/images/bg-garden-image.jpg";
 
 const LoginScreenWrapper = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: var(--clr-primary-color);
+  background-color: var(--clr-bg-light);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -16,10 +15,13 @@ const LoginScreenWrapper = styled.main`
   right: 0;
 `;
 
-const LoginPage = () => {
+const LoginPage = ({ setShowLayout, setCurrentUser }) => {
   return (
     <LoginScreenWrapper className="section__form">
-      <FormLogin />
+      <FormLogin
+        setShowLayout={setShowLayout}
+        setCurrentUser={setCurrentUser}
+      />
     </LoginScreenWrapper>
   );
 };

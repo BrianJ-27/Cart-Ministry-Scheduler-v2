@@ -1,17 +1,11 @@
 import React from "react";
-import Header from "../layout/header/Header";
-import DashNav from "../layout/nav/Nav";
 import Cards from "../reusable/cards/Cards";
 
-const Dashboard = ({ userProfile, currentUser }) => {
+const Dashboard = () => {
   return (
-    <div className="grid__wrapper">
-      <Header userProfile={userProfile} />
-      <DashNav currentUser={currentUser} />
-      <main className="main">
-        <Cards />
-      </main>
-    </div>
+    <main className="main">
+      <Cards />;
+    </main>
   );
 };
 

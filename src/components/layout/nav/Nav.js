@@ -9,7 +9,20 @@ import { BiDoorOpen } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { NavWrapper, NavIndicator, Navigation } from "./Nav.styles";
 
-const DashNav = ({ currentUser }) => {
+const DashNav = ({
+  currentUser,
+  showLayout,
+  setShowLayout,
+  setCurrentUser,
+}) => {
+  const loggedOut = () => {
+    /*This one piece of code is toggling 
+      the nav and header components out of the DOM
+    */
+    setShowLayout(!showLayout);
+    setCurrentUser(false);
+  };
+
   return (
     <Navigation className="nav flex__container--space-between">
       <NavWrapper>
@@ -42,14 +55,14 @@ const DashNav = ({ currentUser }) => {
           </Link>
         </li>
         {currentUser ? (
-          <li onClick={logout}>
+          <li>
             <Link to="/" className=" nav__link link__text">
               <BiDoorOpen className="nav__icon" />
               <span className="title">Log Out</span>
             </Link>
           </li>
         ) : (
-          <li>
+          <li onClick={loggedOut}>
             <Link to="/" className=" nav__link link__text">
               <BiDoorOpen className="nav__icon" />
               <span className="title">Log Out</span>
