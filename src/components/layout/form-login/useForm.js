@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-const useForm = (validate) => {
+
+const useForm = (validate, setShowLayout) => {
   let history = useNavigate();
 
   // Set initial Form State values to empty strings
@@ -26,6 +27,7 @@ const useForm = (validate) => {
   const handleLogin = (e) => {
     e.preventDefault();
     setErrors(validate(formData));
+    setShowLayout(true);
     history("/dashboard");
   };
 
